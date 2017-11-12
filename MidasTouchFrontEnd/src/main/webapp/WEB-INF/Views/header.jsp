@@ -21,22 +21,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">MidasTouch</a>
+      <a class="navbar-brand" href="frontEnd">MidasTouch</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="index">Home</a></li>
         <li class="dropdown">
           <li><a href="category">Category</a></li>
       
         <li><a href="Products">Product</a></li>
-        <li><a href="#">Suppiler</a></li>
+        <li><a href="#">Supplier</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default">Search</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

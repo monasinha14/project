@@ -1,7 +1,18 @@
 <%@ include file="header.jsp" %>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<table border="1" align="center">
-<h1 align="center">Product View</h1>
+<table border="1" align="center" class="table">
+<div class="panel-heading"><h1 align="center">Product View</h1></div>
+
 <tr>
   <th>Product ID</th>
   <th>Product Name</th>
@@ -20,15 +31,16 @@
 <td>${product.prodDescp}</td>
 <td>${product.prodCategory}</td>
 <td>${product.prodPrice}</td>
- <td><a href="addProduct">Add</a></td>
- <td> <a href="editProduct/${product.prodId}">Edit</a>|<a href="delete_product/${product.prodId}">Delete</a>
+ <td><a type="button" class="btn btn-warning" href="editProduct/${product.prodId}">Edit</a> 
+ </td>
+ <td>     <a type="button" class="btn btn-danger" href="delete_product/${product.prodId}">Delete</a>
   </td>
   </tr>
   </c:forEach>
-
 </table>
+<div align="center"><a type="button" class="btn btn-success" href="addProduct">Add Product</a>
+ </div>
 
- 
 
 </body>
 </html>

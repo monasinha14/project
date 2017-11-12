@@ -23,15 +23,11 @@
          </tr>   
          <tr>
          <tr>    
-          <td>Product Category :</td>    
-        <td><input type="text" name="prodCategory"></td>
-         </tr>   
-         <tr>
-          <td> </td>    
+          
           <td><input type="submit" value="Add" /></td>    
          </tr>    
         </table>    
        </form:form>
-       
+     
 </body>
 </html>

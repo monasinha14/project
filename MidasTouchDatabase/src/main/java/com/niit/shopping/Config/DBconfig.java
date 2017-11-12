@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.shopping.Model.Category;
 import com.niit.shopping.Model.Product;
+import com.niit.shopping.Model.Supplier;
 import com.niit.shopping.Model.User;
 
 
@@ -47,6 +48,7 @@ public SessionFactory getSessionFactory()
         locsessionbuilder.addAnnotatedClass(Category.class);
         locsessionbuilder.addAnnotatedClass(Product.class);
         locsessionbuilder.addAnnotatedClass(User.class);
+        locsessionbuilder.addAnnotatedClass(Supplier.class);
         SessionFactory sessionFactory = locsessionbuilder.buildSessionFactory();
         System.out.println("Session Factory Object created");
         return sessionFactory;
@@ -57,5 +59,6 @@ public HibernateTransactionManager getHibernateTransactionManager(SessionFactory
 {
     HibernateTransactionManager hibernatetransmanager = new HibernateTransactionManager(sessionFactory);
     return hibernatetransmanager;
+    
 }
 }

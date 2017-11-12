@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1" align="center">
+<table border="1" align="center" class="table">
 <h1 align="center">View Category</h1>
 <tr>
   <th>Category ID</th>
@@ -22,12 +22,13 @@
   <td>${category.catId}</td>
 <td>${category.catName}</td>
 <td>${category.catDescp}</td>
-  <td><a href="addCategory">Add</a></td>
-  <td><a href="delete_category/${category.catId}">Delete</a></td>
+  <td><a type="button" class="btn btn-success" href="editCategory">Edit</a></td>
+  <td><a type="button" class="btn btn-danger" href="delete_category/${category.catId}">Delete</a></td>
   </tr>
   </c:forEach>
 
 </table>
+<div align="center"><a type="button" class="btn btn-success" href="addCategory">Add Category</a>
 
 </body>
 </html>

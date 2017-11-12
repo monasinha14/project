@@ -1,9 +1,14 @@
 package com.niit.shopping.Model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -13,25 +18,34 @@ import org.springframework.stereotype.Component;
 @Table
 public class Category {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int catId;
 	private String catDescp;
 	private String catName;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "prodId")
+	private Set<Product> product;
+
 	public int getCatId() {
 		return catId;
 	}
+
 	public void setCatId(int catId) {
 		this.catId = catId;
 	}
+
 	public String getCatDescp() {
 		return catDescp;
 	}
+
 	public void setCatDescp(String catDescp) {
 		this.catDescp = catDescp;
 	}
+
 	public String getCatName() {
 		return catName;
 	}
+
 	public void setCatName(String catName) {
 		this.catName = catName;
 	}

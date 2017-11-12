@@ -1,4 +1,4 @@
-package com.niit.shopping.Test;
+/*package com.niit.shopping.Test;
 
 import static org.junit.Assert.*;
 
@@ -70,3 +70,4 @@ public class CategoryTest {
 		}
 	}
 }
+*/

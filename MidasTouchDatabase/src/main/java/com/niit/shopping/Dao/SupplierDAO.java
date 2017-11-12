@@ -8,7 +8,7 @@ public interface SupplierDAO {
 	public boolean addsup(Supplier supplier);
 	public boolean updatesup(Supplier supplier);
 	public boolean deletesup(Supplier supplier);
-	public Supplier getsupbyId(int suppiler);
+	public Supplier getsupbyId(int supplier);
 	public List<Supplier> getListsup();
 
 }

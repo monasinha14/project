@@ -1,9 +1,12 @@
 package com.niit.shopping.Model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -13,42 +16,55 @@ import org.springframework.stereotype.Component;
 @Table
 public class Supplier {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	public String supId;
-	public String getSupId() {
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int supId;
+	private String supName;
+	private int supContact;
+	private int supQuantity;
+	private String supItem;
+	
+	public int getSupContact() {
+		return supContact;
+	}
+
+	public void setSupContact(int supContact) {
+		this.supContact = supContact;
+	}
+
+	public int getSupQuantity() {
+		return supQuantity;
+	}
+
+	public void setSupQuantity(int supQuantity) {
+		this.supQuantity = supQuantity;
+	}
+
+	
+	public int getSupId() {
 		return supId;
 	}
-	public void setSupId(String supId) {
+
+	public void setSupId(int supId) {
 		this.supId = supId;
 	}
+
 	public String getSupName() {
 		return supName;
 	}
+
 	public void setSupName(String supName) {
 		this.supName = supName;
 	}
-	public String getSupContact() {
-		return supContact;
-	}
-	public void setSupContact(String supContact) {
-		this.supContact = supContact;
-	}
-	public String getSupQuantity() {
-		return supQuantity;
-	}
-	public void setSupQuantity(String supQuantity) {
-		this.supQuantity = supQuantity;
-	}
-	public String supName;
-	public String supContact;
-	public String supQuantity;
-	public String supItem;
+
+	
+	
+
 	public String getSupItem() {
 		return supItem;
 	}
+
 	public void setSupItem(String supItem) {
 		this.supItem = supItem;
 	}
-	
 
 }

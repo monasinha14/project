@@ -12,12 +12,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.niit.shopping.Dao.ProductDAO;
 import com.niit.shopping.Model.Category;
 import com.niit.shopping.Model.Product;
+import com.niit.shopping.Model.Supplier;
 
 public class ProductTest {
 	
 	private static AnnotationConfigApplicationContext context;
 	private static ProductDAO productDAO;
 	private static Product product;
+	
 	
 	@BeforeClass
 	public static void init(){
@@ -28,24 +30,30 @@ public class ProductTest {
 		product=(Product)context.getBean("product");
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
-	@Ignore
+	
 	@Test
 	public void add_product(){
-		
-		product.setProdId(521);
+		//Category category=new Category();
+		//category.setCatId(1);
+		//Supplier suppiler=new Supplier();
+		//suppiler.setSupId(1);
+		//product.setProdId(7);
 		product.setProdName("samsung");
 		product.setProdDescp("j2 ");
 		product.setProdPrice(7000);
-		product.setProdCategory("MOBILe");
-		assertEquals(true,productDAO.add_product(product));
+		product.setProdCategory("1");
+		//product.setSupplier(suppiler);
+		//product.setCategory(category);
+		assertNotNull(productDAO.add_product(product));
 		 
 	}
+	@Ignore
 	@Test
 	public void getproductby_id(){
 
-		Product product= productDAO.getproductby_Id(1);
+		Product product= productDAO.getproductby_Id(2);
 		assertNotNull(product);
-		assertEquals(1, product.getProdId());
+		assertEquals(2, product.getProdId());
 		
 		
 	}
@@ -54,11 +62,9 @@ public class ProductTest {
 	@Test
 	public void getAllproduct(){
 		List<Product> list=productDAO.getlist_product();
-		assertEquals(7,list.size());
+		assertEquals(2,list.size());
 		for(Product prod:list){
 			System.out.println(prod.getProdId()+""+prod.getProdName());
 		}
-		 
 	}
- 
 }
