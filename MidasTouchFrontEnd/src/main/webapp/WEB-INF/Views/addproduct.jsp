@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>Add New Product</h1>  
-       <form:form method="post" action="saveProduct" commandName="product">    
-        <table  align="center">       
+       <form:form method="post" action="saveProduct" commandName="product" enctype="multipart/form-data">    
+        <table align="center">       
          <tr>    
           <td>Product Name :</td>    
           <td><input type="text" name="prodName"></td> 
@@ -20,12 +20,21 @@
          <tr>    
           <td>Product Price :</td>    
          <td><input type="text" name="prodPrice"></td>
-         </tr>   
-         <tr>
+         </tr> 
+         <tr> 
+         <td>Product Category:</td>    
+         <td><input type="text" name="prodCategory"></td>
+         </tr>  
+         
          <tr>    
-          
-          <td><input type="submit" value="Add" /></td>    
-         </tr>    
+          <td>Product Image :</td>    
+         
+ <td><input type="file" name="prodimg"> </td>
+         </tr>
+         
+          <tr>
+          <td><input type="submit" value="Add" /></td>   
+          </tr>     
         </table>    
        </form:form>
      

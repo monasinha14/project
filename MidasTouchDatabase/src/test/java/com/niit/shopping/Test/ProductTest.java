@@ -30,39 +30,53 @@ public class ProductTest {
 		product=(Product)context.getBean("product");
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
-	
+	@Ignore
 	@Test
 	public void add_product(){
 		//Category category=new Category();
 		//category.setCatId(1);
 		//Supplier suppiler=new Supplier();
 		//suppiler.setSupId(1);
-		//product.setProdId(7);
-		product.setProdName("samsung");
-		product.setProdDescp("j2 ");
-		product.setProdPrice(7000);
+		product.setProdId(2);
+		product.setProdName("Laptop");
+		product.setProdDescp("thinkpad");
+		product.setProdPrice(4760);
 		product.setProdCategory("1");
 		//product.setSupplier(suppiler);
 		//product.setCategory(category);
-		assertNotNull(productDAO.add_product(product));
+		assertEquals(true,productDAO.add_product(product));
 		 
 	}
 	@Ignore
 	@Test
 	public void getproductby_id(){
 
-		Product product= productDAO.getproductby_Id(2);
+		Product product= productDAO.getproductby_Id(1);
 		assertNotNull(product);
-		assertEquals(2, product.getProdId());
+		assertEquals(1, product.getProdId());
 		
 		
+	}
+	
+	@Test
+	public void updateproduct(){
+		Product product=productDAO.getproductby_Id(2);
+		product.setProdPrice(8000);
+		
+		assertEquals(true,productDAO.update_product(product));
+	}
+	@Ignore
+	@Test
+	public void deleteproduct(){
+		Product product=productDAO.getproductby_Id(1);
+		assertEquals(true,productDAO.delete_product(product));
 	}
 
 	@Ignore
 	@Test
 	public void getAllproduct(){
 		List<Product> list=productDAO.getlist_product();
-		assertEquals(2,list.size());
+		assertEquals(1,list.size());
 		for(Product prod:list){
 			System.out.println(prod.getProdId()+""+prod.getProdName());
 		}

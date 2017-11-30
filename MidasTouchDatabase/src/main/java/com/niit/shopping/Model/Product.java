@@ -8,8 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
@@ -22,7 +24,17 @@ public class Product {
 	private int prodPrice;
 	private String prodCategory;
 	private String prodDescp;
-	/*@ManyToOne(cascade = CascadeType.ALL)
+	@Transient 
+	private MultipartFile prodimg;
+	public MultipartFile getProdimg() {
+		return prodimg;
+	}
+
+	public void setProdimg(MultipartFile prodimg) {
+		this.prodimg = prodimg;
+	}
+
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "catId",referencedColumnName="catId")
 	private Category category;
 
@@ -45,7 +57,6 @@ public class Product {
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
-*/
 	public int getProdId() {
 		return prodId;
 	}

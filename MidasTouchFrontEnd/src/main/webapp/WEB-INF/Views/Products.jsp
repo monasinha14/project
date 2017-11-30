@@ -9,9 +9,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<table border="1" align="center" class="table">
-<div class="panel-heading"><h1 align="center">Product View</h1></div>
+<table border="1" class="table">
+<h1 align="center">Product View</h1>
 
 <tr>
   <th>Product ID</th>
@@ -21,6 +20,7 @@
   <th> Quantity</th>
   <th>Edit</th>
   <th>Delete</th>
+ 
 </tr>
 
 
@@ -29,8 +29,10 @@
   <td>${product.prodId}</td>
 <td>${product.prodName}</td>
 <td>${product.prodDescp}</td>
-<td>${product.prodCategory}</td>
 <td>${product.prodPrice}</td>
+<td>${product.prodCategory}</td>
+
+
  <td><a type="button" class="btn btn-warning" href="editProduct/${product.prodId}">Edit</a> 
  </td>
  <td>     <a type="button" class="btn btn-danger" href="delete_product/${product.prodId}">Delete</a>
@@ -38,7 +40,7 @@
   </tr>
   </c:forEach>
 </table>
-<div align="center"><a type="button" class="btn btn-success" href="addProduct">Add Product</a>
+<div align="center"><a type="button" class="btn btn-success" href="addproduct">Add Product</a>
  </div>
 
 

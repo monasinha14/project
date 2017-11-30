@@ -8,6 +8,8 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import sun.security.util.Password;
+
 @Entity
 @Component
 @Table
@@ -15,6 +17,30 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int uId;
+	private String password;
+	private String uName;
+	private String uEmail;
+	private long uContact;
+	public long getuContact() {
+		return uContact;
+	}
+	public void setuContact(long uContact) {
+		this.uContact = uContact;
+	}
+	private boolean isActive;
+	private String role;
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public int getuId() {
 		return uId;
 	}
@@ -33,27 +59,12 @@ public class User {
 	public void setuEmail(String uEmail) {
 		this.uEmail = uEmail;
 	}
-	public int getuContact() {
-		return uContact;
-	}
-	public void setuContact(int uContact) {
-		this.uContact = uContact;
-	}
-	public String getuAddress() {
-		return uAddress;
-	}
-	public void setuAddress(String uAddress) {
-		this.uAddress = uAddress;
-	}
+	
 	public boolean isActive() {
 		return isActive;
 	}
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-	private String uName;
-	private String uEmail;
-	private int uContact;
-	private String uAddress;
-	private boolean isActive;
+	
 }

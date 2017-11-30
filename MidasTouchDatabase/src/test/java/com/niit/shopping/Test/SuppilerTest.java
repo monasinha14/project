@@ -16,7 +16,7 @@ public class SuppilerTest {
 	private static SupplierDAO supplierDAO;
 	
 	@BeforeClass
-	public void init(){
+	public static void init(){
 		context=new AnnotationConfigApplicationContext();
 		context.scan("com.niit.shopping");
 		

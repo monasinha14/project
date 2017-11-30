@@ -22,10 +22,6 @@ public class Category {
 	private int catId;
 	private String catDescp;
 	private String catName;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "prodId")
-	private Set<Product> product;
-
 	public int getCatId() {
 		return catId;
 	}

@@ -1,4 +1,4 @@
-/*package com.niit.shopping.Test;
+package com.niit.shopping.Test;
 
 import static org.junit.Assert.*;
 
@@ -26,15 +26,15 @@ public class UserTest {
 		userDAO=(UserDAO)context.getBean("userDAO");
 		user=(User)context.getBean("user");
 	}
-	@Ignore
+	
 	@Test
 	public void add_user(){
 		 user.setuId(121);
-		 user.setuName("MONA");
+		 user.setuName("hjghj");
 		 user.setuContact(82710230);
-		 user.setuAddress("Begusarai");
 		 user.setuEmail("mona@gmail.com");
 		 user.setActive(true);
+		 user.setPassword("mona123");
 		 assertEquals(true,userDAO.add_user(user));
 	}
 	@Ignore
@@ -49,7 +49,7 @@ public class UserTest {
 	@Test
 	public void update_User(){
 		User user= userDAO.getuserby_Id(1);
-		user.setuAddress("DELHI");;
+		
 		user.setuName("KULSOOm");
 		assertEquals(true,userDAO.update_user(user));
 	}
@@ -59,6 +59,7 @@ public class UserTest {
 		User user= userDAO.getuserby_Id(1);
 		assertEquals(true,userDAO.delete_user(user));
 	}
+	@Ignore
 	@Test
 	public void getAllcategory(){
 		List<User> list=userDAO.getuserList();
@@ -70,5 +71,3 @@ public class UserTest {
 	}
 }
  
-
-*/

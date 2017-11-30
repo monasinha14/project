@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: com.niit.shopping.Test.ProductTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 0.564 sec <<< FAILURE!
-getproductby_id(com.niit.shopping.Test.ProductTest)  Time elapsed: 0.071 sec  <<< FAILURE!
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertNotNull(Assert.java:712)
-	at org.junit.Assert.assertNotNull(Assert.java:722)
-	at com.niit.shopping.Test.ProductTest.getproductby_id(ProductTest.java:47)
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 5.755 sec <<< FAILURE!
+add_product(com.niit.shopping.Test.ProductTest)  Time elapsed: 0.549 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.niit.shopping.Test.ProductTest.add_product(ProductTest.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,7 +20,10 @@ public class ProductImpl implements ProductDAO {
 
 	public boolean add_product(Product product) {
 		try {
-			sessionFactory.getCurrentSession().save(product);
+			Session session = sessionFactory.openSession();
+			session.save(product);
+			session.flush();
+			session.close();
 			return true;
 		} catch (HibernateException e) {
 

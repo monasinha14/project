@@ -7,11 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
-	 // @RequestMapping("/")
-	  @RequestMapping(method = RequestMethod.GET)
+	 @RequestMapping({"/","/home"})
 	public String Model(ModelMap model) {
-		//return "index";
-		
 		 model.addAttribute("welcome", "spring mvc");
 	        return "index";
 	}

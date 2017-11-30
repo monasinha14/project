@@ -1,8 +1,10 @@
 
 <%@ include file="header.jsp" %>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,7 +13,6 @@
 </head>
 <body>
 <div>
-  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -22,28 +23,17 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-
       <div class="item active">
-        <img src="resources/images/bg.png" alt="Iphone" style="width:100%;">
-        <div class="carousel-caption">
-          
-        </div>
+        <img src="<c:url value='/resources/images/d.jpg' />" alt="Iphone" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="b.jpg" alt="Samsung" style="width:100%;">
-        <div class="carousel-caption">
-        
-        </div>
+    <img src="<c:url value='/resources/images/b.jpg' />" alt="Iphone" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="c.jpg" alt="MI" style="width:100%;">
-        <div class="carousel-caption">
-          
-        </div>
+       <img src=<c:url value="/resources/images/c.jpg" /> alt="Los Angeles" style="width:100%;">
       </div>
-  
     </div>
 
     <!-- Left and right controls -->

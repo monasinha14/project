@@ -45,6 +45,7 @@ public class categoryController {
 			categoryDAO.add_category(category);
 			return "redirect:/category";
 	}
+	
 		
 	}
 	

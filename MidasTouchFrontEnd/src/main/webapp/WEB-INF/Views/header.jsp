@@ -25,12 +25,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index">Home</a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li class="dropdown">
           <li><a href="category">Category</a></li>
       
         <li><a href="Products">Product</a></li>
-        <li><a href="#">Supplier</a></li>
+        <li><a href="userindex">Supplier</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -38,10 +38,18 @@
       </div>
       <button type="submit" class="btn btn-default">Search</button>
     </form>
+    <c:if test="${pageContext.request.userPrincipal.name==null}">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="signUp" ><span class=	"glyphicon glyphicon-user">SignUp</a></span></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
+      </c:if>
+      <c:if test="${pageContext.request.userPrincipal.name!=null}">
+      <ul class="nav navbar-nav navbar-right">
+        <li>Welcome  : ${pageContext.request.userPrincipal.name}</li>
+        <li><a href="logout">Logout</a></li>
+      </ul>
+      </c:if>
     </div>
   </div>
 </nav>

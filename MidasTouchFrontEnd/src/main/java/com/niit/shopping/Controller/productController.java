@@ -1,6 +1,15 @@
 package com.niit.shopping.Controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +21,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shopping.Dao.CategoryDAO;
@@ -60,17 +72,33 @@ public class productController {
 
 	@GetMapping(value = "/addProduct")
 	public String addproduct(Model model) {
-       
+
 		model.addAttribute("product", new Product());
 		return "addproduct";
 	}
 
 	@PostMapping(value = "/saveProduct")
-	public String saveProduct(@ModelAttribute("product") Product product) {
-		
+	public String saveProduct(@ModelAttribute("product") Product product, HttpServletRequest hs, Model model) {
+
 		product.setSupplier(supplierDAO.getsupbyId(1));
 		product.setCategory(categoryDAO.getcatbyId(1));
+		MultipartFile file = product.getProdimg();
 		productDAO.add_product(product);
+		model.addAttribute("status", "add");
+
+		String rootDirectory = hs.getSession().getServletContext().getRealPath("/");
+		Path path = Paths.get(rootDirectory + "/resources/images/product/" + product.getProdId() + ".JPEG");
+		System.out.println(path);
+
+		if (file != null && !file.isEmpty()) {
+			try {
+				file.transferTo(new File(path.toString()));
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				throw new RuntimeException("Product image saving failed", ex);
+			}
+
+		}
 		return "redirect:/Products";
 	}
 

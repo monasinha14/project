@@ -1,0 +1,13 @@
+com\niit\shopping\Dao\CategoryDAO.class
+com\niit\shopping\Model\User.class
+com\niit\shopping\Dao\ProductDAO.class
+com\niit\shopping\Model\Category.class
+com\niit\shopping\Dao\UserDAO.class
+com\niit\shopping\Model\Supplier.class
+com\niit\shopping\Dao\UserImpl.class
+com\niit\shopping\Dao\SupplierDAO.class
+com\niit\shopping\Config\DBconfig.class
+com\niit\shopping\Dao\CategoryImpl.class
+com\niit\shopping\Model\Product.class
+com\niit\shopping\Dao\ProductImpl.class
+com\niit\shopping\Dao\SupplierImpl.class
